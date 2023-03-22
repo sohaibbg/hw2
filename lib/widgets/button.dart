@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hw2/providers/result_provider.dart';
+import 'package:provider/provider.dart';
 
 class Button extends StatelessWidget {
   const Button({
@@ -27,7 +29,8 @@ class Button extends StatelessWidget {
           foregroundColor: MaterialStatePropertyAll(fgColor),
           elevation: const MaterialStatePropertyAll(0),
         ),
-        onPressed: () {},
+        onPressed: () =>
+            Provider.of<ResultProvider>(context, listen: false).input(text),
         child: Text(text),
       );
 }
